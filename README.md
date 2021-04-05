@@ -1,5 +1,3 @@
-### ** Final Project 3 Analysis Report can be read in Report.md **
-
 # Overview
 
 This project is based on the idea of collecting events from a restaurant app. The app allows a user to create a profile, login, search for menus and then order them from restaurants who will deliver them.  
@@ -56,7 +54,7 @@ Scripts have been created to make setup easier, however some use of docker is st
 
 #### 1.Login in to the server and navigate to the project scripts directory
 
-`cd ~/w205/project-3-SextonCJ/scripts`
+`cd ~/<project dir>/scripts`
 
 #### 2. start docker cluster, after checking it is not actually running
 
@@ -73,7 +71,7 @@ The setup.sh script runs the following commands:
 
 ```
 docker-compose exec kafka kafka-topics --create --topic menu_app_events --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:32181  
-docker-compose exec cloudera hive -f /w205/project-3-SextonCJ/scripts/create_tables.sql  
+docker-compose exec cloudera hive -f /<project dir>/scripts/create_tables.sql  
 docker-compose exec mids pip install random-username  
 ```  
   
@@ -89,7 +87,7 @@ Once setup is complete, the app is run against a set of test data, spark streami
 ```
 
 ##### ./flash.sh - runs the command to spin up a flask app server running the restaurant_api.py file
-`docker-compose exec mids env FLASK_APP=/w205/project-3-SextonCJ/scripts/restaurant_api.py flask run --host 0.0.0.0`  
+`docker-compose exec mids env FLASK_APP=/w205/<project dir>/scripts/restaurant_api.py flask run --host 0.0.0.0`  
 
 #### ./spark0.sh and spark1.sh - run the spark scripts which read in events from kafka and write (append) to a parquet file on cloudera  
 There are two spark scripts as there are two distinct schemas (and hive tables) being written to. Each script can be run independently and will listen for the same topic but filtering for the different event types. This is an area that could potentially be refactored where there is only one streaming service, or there are different kafka topics listening for different event structures.
