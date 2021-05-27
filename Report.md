@@ -1,11 +1,7 @@
 # Restaurant App Analysis Report
 
-### Project 3
-### w205 - Section 5 - Summer 2019 - Prof. Mark Mims, Taylor Martin
-### Team Members: Apik Zorian, Chris Sexton, Gopinath Duddi, Khyati Tripathi
 
-
-Restaurant Group ‘KGAC’ has a mobile app that allows users to search for menus and order online for delivery. KGAC has hired a team of data scientists to find ways to improve its online ordering service and improve customer loyalty and adoption. With these goals in mind, the data scientist team at KGAC have implemented a data analytics workflow to capture desktop and mobile interactions. The goal is to answer some of the business questions summarized below.
+Fictional Restaurant Group ‘KGAC’ has a mobile app that allows users to search for menus and order online for delivery. KGAC has hired a team of data scientists to find ways to improve its online ordering service and improve customer loyalty and adoption. With these goals in mind, the data scientist team at KGAC have implemented a data analytics workflow to capture desktop and mobile interactions. The goal is to answer some of the business questions summarized below.
 
 What are the most popular menu items?
 What menu items should the restaurants introduce or improve?
